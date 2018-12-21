@@ -1,0 +1,86 @@
+/*-------------------------------------------  支付页面  start ------------------------------------------------*/
+#qrcodeContent{
+    padding: 3.5rem 0 4rem;
+}
+#qrcodeImg{
+    text-align: center;
+}
+#qrcodeImg img{
+    width: 50%;
+    margin: 1rem auto;
+}
+#qrcodeInfo ul li{
+    width: 90%;
+    margin: 0 auto;
+    height: 2rem;
+    line-height: 2rem;
+}
+#qrcodeInfo ul li span{
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+}
+#qrcodeInfo ul #checkpay{
+    height: 3rem;
+    margin-top: 0.5rem;
+}
+#qrcodeInfo ul li input{
+    width: 100%;
+    background: #f60;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    color: white;
+}
+#payInfo{
+    font-weight: bold;
+    font-size: 1rem;
+    color: #f60;
+}
+/*-------------------------------------------  支付成功  start ------------------------------------------------*/
+#paySuccessContent{
+    padding: 3.2rem 0 4rem;
+}
+#paySuccessContent ul li{
+    color: #666;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+#paySuccessContent ul li:nth-child(2){
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: red;
+}
+#paySuccessContent ul .goToPay a{
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    width: 60%;
+    background: #c00;
+    margin: 1rem auto;
+    color: white;
+}
+/*PC端样式*/
+@media screen and (min-width: 960px){
+    body{
+        position: relative;
+        width: 760px!important;
+        border: 1px solid #111111;
+        margin: 0 auto;
+        height: 100%;
+    }
+    
+    #footerDiv,#headerDiv,#shopPanel{
+        width: 760px!important;
+        margin: 0 auto;
+    }
+    #tips{
+        width: 60%;
+        left: 10%;
+    }
+}

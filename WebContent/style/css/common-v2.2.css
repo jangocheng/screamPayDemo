@@ -1,0 +1,102 @@
+@charset "UTF-8";
+html {font-size: 4vm;height: 100%;}
+body {height: 100%;-moz-user-select:   none;}
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul {margin: 0;padding: 0;font-size: .8rem;font-family: "微软雅黑";}
+.clear {zoom: 1;}
+.clear:after {clear: both;display: block;overflow: hidden;height: 0;content: "";}
+a {color: #333;text-decoration: none;}
+li {list-style: none}
+/*-----------------------angular  css  star-----------------------*/
+/* Include this file in your html if you are using the CSP mode. */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+    display: none !important;
+}
+ng\:form {
+    display: block;
+}
+.ng-animate-shim {
+    visibility:hidden;
+}
+.ng-anchor {
+    position:absolute;
+}
+/*-----------------------头部公共部分    star-----------------------*/
+#headerDiv {
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    height: 3rem;
+    border-bottom: 1px solid #eee
+}
+#headerDiv ul {
+    height: 3rem;
+    line-height: 3rem;
+    font-size: .8rem;
+    text-align: center
+}
+#headerDiv ul li a {
+    display: block
+}
+#headerDiv ul li img {
+    opacity: .6;
+    width: 1.8rem;
+    height: 1.8rem
+}
+#headerDiv ul li:first-child{
+    position: absolute;
+    left: 1rem;
+    top: .5rem
+}
+#headerDiv ul li:last-child{
+    position: absolute;
+    right: 1rem;
+    top: .5rem
+}
+/*-----------------------头部公共部分    end-----------------------*/
+/*-----------------------底部公共部分    star-----------------------*/
+#footerDiv {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    height: 3.5rem;
+    border-top: 1px solid #ccc;
+    padding-top: .5rem;
+    background: #fff
+}
+#footerDiv ul li {
+    width: 33%;
+    float: left;
+    text-align: center;
+    color: #666
+}
+#footerDiv ul li a span {
+    display: block;
+    position: relative;
+    top: -.4rem
+}
+#footerDiv ul li img {
+    margin-bottom: .2rem;
+    width: 28px;
+    height: 28px;
+}
+/*-----------------------底部公共部分    end-----------------------*/
+/*-----------------------提示    -----------------------*/
+#tips{
+    width: 80%;
+    margin: -2rem 10%;
+    position: fixed;
+    top: 50%;
+    height: 4rem;
+    background: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 4rem;
+    z-index: 99999999999999;
+    border-radius: .5rem;
+    border: 1px solid #eee
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="style/css/common-v2.2.css">
+    <link rel="stylesheet" href="style/css/index-v2.2.css">
+    <title>支付</title>
+</head>
+<body>
+    <header-div></header-div>
+    <div id="qrcodeContent">
+        <div id="qrcodeImg" ><img id="qrcode" alt="" width="50%"></div>
+        <div id="qrcodeInfo">
+            <ul>
+            
+                <li>1、打开<span id="outChannel"></span>扫描二维码并支付</li>
+                <li>2、支付成功后，点击下方按钮查询支付结果</li>
+                
+                   
+                <li id="checkpays">
+                	<form action="/ScreamPayDemo/QueryServlet" target="_blank">
+                 		<input type=text id="merchNo" name="merchNo" hidden="yes">
+                		<input type=text id="orderNo" name="orderNo" hidden="yes">
+                		<input type="submit" value="点击查询支付结果">
+                	</form>
+                </li>
+                <li id="payInfo"></li>
+            </ul>
+        </div>
+    </div>
+    <!--提示框-->
+    <tips-div></tips-div>
+</body>
+<script type="text/javascript" src="style/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="style/js/qrcode.js"></script>
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcodeImg"), {
+	width : 150,
+	height : 150
+});
+
+function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
+}
+
+
+function makeCode () {		
+	var Request = new Object();
+	Request = GetRequest();
+	//支付方式
+	qrcodeUrl = Request['qrcodeUrl'];
+	qrcode.makeCode(qrcodeUrl);
+	
+	merchNo = Request['merchNo'];
+	merchNoInput = document.getElementById("merchNo");
+	merchNoInput.value = merchNo;
+
+	orderNo = Request['orderNo'];
+	orderNoInput = document.getElementById("orderNo");
+	orderNoInput.value = orderNo;
+	
+	orderNo = Request['orderNo'];
+	
+	outChannel = Request['outChannel'];
+	outChannelLabel = document.getElementById("outChannel");
+	var outChannelText;
+	if (outChannel == 'wx'){
+		outChannelText = '微信';
+	} else if(outChannel == 'qq') {
+		outChannelText = 'QQ';
+	} else {
+		outChannelText = '支付宝';
+	}
+	outChannelLabel.innerHTML = outChannelText;
+	
+	
+}
+makeCode();
+</script>
+</html>
