@@ -28,12 +28,12 @@
   
   <servlet>
     <description></description>
-    <display-name>NofifyServlet</display-name>
-    <servlet-name>NofifyServlet</servlet-name>
-    <servlet-class>action.NofifyServlet</servlet-class>
+    <display-name>NotifyServlet</display-name>
+    <servlet-name>NotifyServlet</servlet-name>
+    <servlet-class>action.NotifyServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>NofifyServlet</servlet-name>
-    <url-pattern>/NofifyServlet</url-pattern>
+    <servlet-name>NotifyServlet</servlet-name>
+    <url-pattern>/NotifyServlet</url-pattern>
   </servlet-mapping>
 </web-app>
